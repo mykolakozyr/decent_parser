@@ -2,43 +2,43 @@ import urllib2
 from bs4 import BeautifulSoup
 import re
 
-file_output = open('url.txt', 'w')
+file_output = open('url_real.txt', 'w')
 
 def search_otg(id):
-	print 'Preparing the GET request.....\nID number ' + str(id)
+	print 'Preparing the GET request.....ID number ' + str(id)
 
 	#set the url for parsing links to otg in every region
-	url = "http://decentralization.gov.ua/region/item/id/" + str(id)
+	url = "http://decentralization.gov.ua/region/item/id/" + str(id) + '#tab1'
 	response = urllib2.urlopen(url)
-
 	html = response.read()
 
 	print 'Received Response..... Preparing to parse'
-
-	#print html
 
 	soup = BeautifulSoup(html, 'html.parser')
 
 	print 'Created a Soup. Getting ready for findAll'
 
-	for a in soup.findAll('a', href=True):
-		if re.search('region/common', str(a['href'])):
-			link = a['href']
-			if link in d:
-				print 'Found the existing value'
-				continue
-			else:
-				print 'Found the unique value'
-				d.append(link)
-				file_output.write('http://decentralization.gov.ua'+link+'\n')
+	divclass = soup.findAll(id = "tab1")
+
+	for tag in divclass:
+		aTags = tag.findAll('a', href=True)
+		for tag in aTags:
+		 if re.search('region/common', str(tag['href'])):
+		 	link = tag['href']
+		 	print link
+		# 	if link in d: #check if it is not a duplicate
+		# 		continue
+		# 	else:
+		# 		d.append(link)
+		 	file_output.write('http://decentralization.gov.ua'+link+'\n')
 	print 'Finished with region number ' + str(id)
 
 id = 1
-d = list()
+d = list() #list for avoiding duplicate links
 
-#loop for all he regions
+#loop for all the regions
 while True:
-	if id == 26:
+	if id == 25:
 		break
 	search_otg(id)
 	id = id + 1
