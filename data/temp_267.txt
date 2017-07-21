@@ -1,0 +1,7 @@
+name|Смизька територіальна громада
+region|Рівненська область
+id|id367
+link|http://decentralization.gov.ua/region/common/id/1247
+1|2
+смт|Громади
+Смига|Смизька територіальна громада

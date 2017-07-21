@@ -1,0 +1,7 @@
+name|Барська територіальна громада
+region|Вінницька область
+id|id102
+link|http://decentralization.gov.ua/region/common/id/248
+1|2
+місто|Громади
+Бар|Барська територіальна громада

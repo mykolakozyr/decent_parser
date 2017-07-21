@@ -1,0 +1,5 @@
+name|Старосинявська територіальна громада
+region|Хмельницька область
+id|id463
+link|http://decentralization.gov.ua/region/common/id/602
+Найменування показника|Значення показника
