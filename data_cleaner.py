@@ -10,10 +10,9 @@ file_output = open('data_cleaned.csv','w')
 
 def cleaner(a):
 	a.strip()
-	a = a.lower() #change value to lowercase
-	if a in true_words:
+	if a.decode('utf-8').lower() in true_words:
 		a = 'true'
-	elif a in false_words:
+	elif a.decode('utf-8').lower() in false_words:
 		a = 'false'
 	elif a.endswith(",0") or a.endswith(".0"):
 		a = a[:-2]
