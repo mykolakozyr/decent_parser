@@ -9,6 +9,6 @@ The website http://decentralization.gov.ua/ has the information which should be 
 ### Опрацювання даних
 Структура таблиць, на порталі Децентралізація влади та характер збереження даних парсеру [Pandas](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_html.html) вимагає подальшої обробки отриманих даних. [Розроблений код](https://github.com/mykolakozyr/decent_parser/blob/master/data_pars.py) перетворює дані у таблицю формату ([key|value](https://github.com/mykolakozyr/decent_parser/blob/master/data/temp_3.txt))
 ### Створення єдиної таблиці
-[Розроблений код](https://github.com/mykolakozyr/decent_parser/blob/master/csv_creator.py) створює єдиний .csv файл. До уваги беруться файли розміром більше 3 кілобайт, тобто ті, що містять паспорт об'єкту. Фінальний результат знаходиться [тут](https://github.com/mykolakozyr/decent_parser/blob/master/data_csv.csv).
+[Розроблений код](https://github.com/mykolakozyr/decent_parser/blob/master/csv_creator.py) створює єдиний .csv файл. Фінальний результат знаходиться [тут](https://github.com/mykolakozyr/decent_parser/blob/master/data_csv.csv). 
 ### Очистка даних
 [Розроблений код](https://github.com/mykolakozyr/decent_parser/blob/master/data_cleaner.py) уніфікує дані із значеннями `true` та `false`, які були представлені по-різному. Код також змінює тип даних з `float` на `integer`, де в цьому є необхідність.
