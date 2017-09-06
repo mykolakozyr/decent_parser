@@ -19,7 +19,7 @@ def cleaner(a):
 	file_output.write(str(a)+'|') #write value to the output file
 
 true_words = ['так', 'є', 'в наявності', 'наявне', '+']
-false_words = ['ні', 'немає', '-', 'ні']
+false_words = ['ні', 'немає', '-']
 
 for line in file:
 	line = line.rstrip()
